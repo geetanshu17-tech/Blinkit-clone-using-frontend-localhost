@@ -1,0 +1,310 @@
+/* Global styles (add at the very top or in your base CSS) */
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin-top: 92px; /* equal to navbar height */
+}
+/* Main navbar */
+.navbar {
+  min-width: 0;
+  height: 92px; /* Increased height */
+  min-height: 80px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 20px;
+  gap: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
+  overflow-x: hidden;   /* Updated to prevent horizontal scrolling */
+  overflow-y: visible;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Keeps it above all content */
+}
+
+.navbar a {
+  text-decoration: none;
+  color: inherit; /* keeps button text color */
+}
+
+
+/* Universal hover for each section */
+.nav-section {
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  border-radius: 6px;
+  padding: 8px 10px;
+  flex: 1 1 80px;
+  min-width: 0;
+}
+
+.nav-section:hover {
+  background-color: #FCFCFC;
+}
+
+/* Logo styling */
+.logo-section {
+  border-right: 1px solid #ddd;
+  padding-right: 20px;
+  padding-left: 25px;
+  margin-right: 0;         /* Changed from 10px to 0 to fix overflow */
+  max-height: 100%;        /* Added */
+  box-sizing: border-box;  /* Added */
+  overflow: hidden;        /* Added to prevent border overflow */
+}
+
+.logo {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  cursor: pointer;
+}
+.blink {
+  color: #F8CB46;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1;
+}
+.it {
+  color: #54B226;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Delivery info */
+.delivery-section {
+  flex-direction: column;
+  text-align: center;
+  padding-right: 20px;
+  margin-right: 10px;
+  gap: 4px;
+  min-width: 130px;
+  max-width: 180px;
+}
+.delivery-section h3 {
+  margin: 0;
+  font-size: 15px;
+  color: #222;
+}
+.delivery-section p {
+  margin: 0;
+  font-size: 15px;
+  color: gray;
+}
+
+/* Search bar */
+.search-section {
+  display: flex;
+  align-items: center;
+  background-color: #FCFCFC;
+  border: 1px solid #ddd;
+  border-radius: 18px;
+  padding: 8px 12px;
+  height: 40px;
+  gap: 8px;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+  flex: 1 1 250px;
+  max-width: 400px;
+  width: 100%;
+}
+.search-section:hover {
+  background-color: #FCFCFC;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+.icon {
+  color: #54B226;
+  font-size: 16px;
+}
+.search {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+}
+
+/* Buttons (Login + Cart) */
+.login-section,
+.cart-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Base button */
+button {
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Login button */
+.login-btn {
+  background: transparent;
+  color: #6c757d;
+  padding: 9px 16px;
+  font-weight: 300;
+  font-size: 18px;
+}
+.login-btn:hover {
+  color: #4aa11e;
+}
+
+/* Cart button */
+.cart-btn {
+  background-color: #b5b5b5;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  min-width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cart-btn.active {
+  background-color: #0C831F;
+}
+
+/* Cart content layout */
+.cart-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.cart-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 2px;
+  font-size: 12px;
+  line-height: 1.2;
+}
+.cart-icon {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+.cart-info span {
+  display: block;
+}
+
+/* Hover effect */
+.cart-btn:hover {
+  transform: translateY(-1px);
+}
+/* --------------------------- */
+/* 📱 RESPONSIVE MEDIA QUERIES */
+/* --------------------------- */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .navbar {
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+
+  .logo-section {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* login + cart near address */
+  .auth-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    order: 2;
+  }
+
+  .delivery-section {
+    order: 1;
+  }
+
+  /* search below everything */
+  .search-section {
+    order: 3;
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-top: 12px;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px 15px;
+  }
+
+
+  .logo-section {
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    width: 25%;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+
+  .delivery-section {
+    margin: 10px 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .auth-actions {
+    justify-content: center;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .search-section {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .blink, .it {
+    font-size: 32px;
+  }
+  .logo-section {
+    display: none;
+  }
+
+  .delivery-section h3,
+  .delivery-section p {
+    font-size: 13px;
+  }
+
+  .login-btn {
+    font-size: 16px;
+  }
+
+  .cart-btn {
+    min-width: 70px;
+  }
+
+  .search-section {
+    order: 3;
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-top: 12px;
+    height: 36px;
+  }
+}

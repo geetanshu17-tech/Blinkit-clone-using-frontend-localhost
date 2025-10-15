@@ -1,0 +1,132 @@
+/* ---------- General Layout ---------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  /* background-color: #f5f5f5; */
+}
+
+/* ---------- Login Container (center only the card) ---------- */
+.login-container {
+  min-height: calc(100vh - 92px); /* leave space for Navbar if its height is 92px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.page-content {
+  padding-top: 92px; /* Adjust to your navbar height */
+}
+
+
+/* ---------- Login Card ---------- */
+.login-card {
+  background: #ffffff;
+  padding: 40px 35px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- Logo ---------- */
+.login-card .logo {
+  display: block;       
+  margin: 0 auto 25px;  
+  width: 100px;
+}
+
+/* ---------- Headings ---------- */
+.login-card h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 10px 0 5px;
+  color: #063f1f;
+}
+
+.login-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* ---------- Form Inputs ---------- */
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-card input[type="tel"] {
+  padding: 14px 16px;
+  font-size: 15px;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.login-card input[type="tel"]:focus {
+  border-color: #318616;
+  box-shadow: 0 0 8px rgba(49, 134, 22, 0.2);
+}
+
+/* ---------- Login Button ---------- */
+.login-btn-card {
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #318616;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-btn-card:hover {
+  background-color: #09721a;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Footer Text ---------- */
+.login-card p:last-child {
+  font-size: 12px;
+  color: #777;
+  margin-top: 15px;
+  line-height: 1.5;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 500px) {
+  .login-card {
+    padding: 30px 20px;
+  }
+
+  .login-card .logo {
+    width: 80px;
+    margin-bottom: 20px;
+  }
+
+  .login-card h2 {
+    font-size: 20px;
+  }
+
+  .login-card input[type="tel"] {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+
+  .login-btn {
+    font-size: 15px;
+    padding: 12px;
+  }
+}

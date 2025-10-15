@@ -1,0 +1,103 @@
+/* ===== Hero Section ===== */
+.hero-container {
+  width: 80%;
+  margin: 20px auto;
+  height: 270px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #6B3E2E 0%, #A97155 100%); /* chocolate gradient */
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 20px 60px;
+  color: white;
+  box-sizing: border-box;
+}
+
+/* ---- Left Section ---- */
+.left-section {
+  display: flex;
+  flex-direction: column;
+  /* gap: 12px; */
+  max-width: 480px;
+}
+
+.left-section h1 {
+  font-size: 48px;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin: 0;
+}
+
+.left-section p {
+  font-size: 20px;
+  color: #FDEEE6;
+}
+
+.left-section button {
+  background-color: #fff;
+  color: #6B3E2E;
+  border: none;
+  padding: 10px 22px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  width: fit-content;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.left-section button:hover {
+  background-color: #FDEEE6;
+  transform: translateY(-2px);
+}
+
+/* ---- Right Section ---- */
+.right-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0; /* Remove spacing between images */
+  flex-wrap: nowrap; /* Keep them on one line */
+}
+
+.right-section img {
+  width: 200px;
+  height: auto;
+  border-radius: 0;
+  transition: transform 0.3s ease;
+  margin-left: -140px; /* overlap */
+  position: relative; /* Required for z-index to work */
+  z-index: 2; /* Default: above */
+}
+
+/* Target every 2nd image */
+.right-section img:nth-child(2n) {
+  transform: translateY(10px);  /* Push it down slightly */
+  z-index: 1; /* Lower z-index puts it behind the previous */
+}
+
+.right-section img:hover {
+  transform: scale(1.05);
+  z-index: 1; /* Bring hovered image to front */
+}
+
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .left-section h1 {
+    font-size: 36px;
+  }
+  .right-section {
+    justify-content: center;
+    gap: 10px;
+  }
+  .right-section img {
+    width: 90px;
+  }
+}

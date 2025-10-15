@@ -1,0 +1,200 @@
+/* ================================
+   MAIN FOOTER CONTAINER
+===================================*/
+.site-footer {
+  background-color: #f9f9f9;
+  color: #222;
+  padding: 50px 70px;
+  font-family: "Poppins", sans-serif;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* ================================
+   TOP SECTION — 2 MAIN PARTS
+===================================*/
+.site-footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* ================================
+   LEFT SIDE — USEFUL LINKS
+===================================*/
+.site-footer-links {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  min-width: 320px;
+}
+
+.site-footer-links h2 {
+  flex-basis: 100%;
+  font-size: 20px;
+  color: #063f1f;
+  margin-bottom: 15px;
+}
+
+.site-footer-links .links-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.site-footer-links .links-column ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.site-footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-footer-links li a {
+  text-decoration: none;
+  color: #666666;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.site-footer-links li a:hover {
+  color: #00a859;
+}
+
+/* ================================
+   RIGHT SIDE — CATEGORIES
+===================================*/
+.site-footer-categories {
+  flex: 2;
+  min-width: 420px;
+}
+
+.site-footer-categories h2 {
+  font-size: 20px;
+  color: #063f1f;
+  margin-bottom: 10px;
+}
+
+/* Make category links look clean */
+.site-footer-categories > a {
+  color: #00a859;
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 15px;
+  display: inline-block;
+  transition: color 0.3s;
+}
+
+.site-footer-categories > a:hover {
+  color: #007f47;
+}
+
+/* GRID DISTRIBUTION INTO 3 COLUMNS (instead of rows) */
+.site-footer-categories ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-auto-rows: auto;
+  gap: 12px 25px; /* row-gap | column-gap */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-footer-categories li a {
+  text-decoration: none;
+  color: #666666;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.site-footer-categories li a:hover {
+  color: #00a859;
+}
+
+
+/* ================================
+   BOTTOM SECTION
+===================================*/
+.site-footer-bottom {
+  border-top: 1px solid #ddd;
+  padding-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* TOP LINE (COPYRIGHT, DOWNLOADS, ICONS) */
+.site-footer-bottom-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.site-footer-bottom-top p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.site-footer-bottom-top img {
+  width: 110px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.site-footer-bottom-top img:hover {
+  transform: scale(1.05);
+}
+
+.site-footer-bottom-top svg {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.site-footer-bottom-top svg:hover {
+  transform: scale(1.1);
+}
+
+/* DISCLAIMER LINE */
+.site-footer-bottom-text {
+  font-size: 13px;
+  color: #777;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* ================================
+   RESPONSIVE
+===================================*/
+@media (max-width: 950px) {
+  .site-footer-top {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .site-footer-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .site-footer-categories ul {
+    grid-template-rows: none;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .site-footer-bottom-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

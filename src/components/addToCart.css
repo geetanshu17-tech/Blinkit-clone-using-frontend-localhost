@@ -1,0 +1,62 @@
+.add-cart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🔹 Both buttons share the same size */
+.add-btn,
+.quantity-control {
+  width: 80px;         
+  height: 36px;        
+  border-radius: 6px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.25s ease-in-out;
+}
+
+/* 🔹 "ADD" button style */
+.add-btn {
+  background: #F7FFF9;
+  color: #318616;
+  border: 1px solid #318616;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background: #318616;
+  color: #fff;
+}
+
+/* 🔹 Counter style */
+.quantity-control {
+  background: #318616;
+  color: #fff;
+  gap: 8px;
+  border: 1px solid #318616;
+}
+
+.quantity-control button {
+  background: transparent;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.quantity-control button:hover {
+  opacity: 0.8;
+}
+
+.qty {
+  font-weight: 600;
+  min-width: 18px;
+  text-align: center;
+}
